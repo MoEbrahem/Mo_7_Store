@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mo_7_store/core/app/env.variables.dart';
 
 class Mo7Store extends StatelessWidget {
   const Mo7Store({super.key});
@@ -7,8 +8,11 @@ class Mo7Store extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
       title: 'Flutter Demo',
-      home: Container(),
+      home: Scaffold(
+        body: Container(),
+      ),
     );
   }
 }
