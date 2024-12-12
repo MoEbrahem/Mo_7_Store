@@ -3,14 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_7_store/core/app/checkConnectivity.dart';
 import 'package:mo_7_store/core/app/env.variables.dart';
 import 'package:mo_7_store/core/common/screens/No_Internet.dart';
+import 'package:mo_7_store/core/language/app_localizations_setup.dart';
 import 'package:mo_7_store/core/routes/AppRoutes.dart';
-import 'package:mo_7_store/core/styles/fonts/fontFamily.dart';
-import 'package:mo_7_store/core/styles/fonts/fontWeight.dart';
+import 'package:mo_7_store/core/styles/theme/app_Theme.dart';
 
 class Mo7Store extends StatelessWidget {
   const Mo7Store({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
@@ -22,20 +21,26 @@ class Mo7Store extends StatelessWidget {
             child: MaterialApp(
               debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
               title: 'Mo_7_Store',
+              locale: const Locale("en"),
+              localizationsDelegates: AppLocalizationsSetup.localizationsDelegates,
+              supportedLocales: AppLocalizationsSetup.supportedLocales,
+              localeResolutionCallback: AppLocalizationsSetup.localeResolutionCallback,
               builder: (context, widget) {
-                return Scaffold(
-                  body: Builder(
-                    builder: (context) {
-                      ConnectivityController.instance.init();
-                      return widget!;
-                    },
+                return GestureDetector(
+                  onTap: (){
+                    FocusManager.instance.primaryFocus?.unfocus();
+                  },
+                  child: Scaffold(
+                    body: Builder(
+                      builder: (context) {
+                        ConnectivityController.instance.init();
+                        return widget!;
+                      },
+                    ),
                   ),
                 );
               },
-              theme: ThemeData(
-                  colorScheme:
-                      ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-                  useMaterial3: true),
+              theme: darkTheme(),
               onGenerateRoute: AppRoutes.onGenerateRoute,  
               initialRoute: AppRoutes.firstPage,  
               // home: ,

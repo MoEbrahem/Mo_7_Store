@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mo_7_store/core/styles/imageAssets.dart';
+import 'package:mo_7_store/core/extensions/context_ext.dart';
+import 'package:mo_7_store/core/styles/images/imageAssets.dart';
 
 class PageUnderBuildScreen extends StatelessWidget {
   const PageUnderBuildScreen({super.key});
@@ -8,12 +9,24 @@ class PageUnderBuildScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          onPressed: () {
+            context.pop();
+          },
+          icon: const Icon(
+            Icons.arrow_back_ios_new,
+            color: Colors.black,
+          ),
+        ),
+      ),
       body: Container(
         constraints: const BoxConstraints.expand(),
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(ImageAssets.pageUnderBuildScreen),
-            fit: BoxFit.fill,
+            fit: BoxFit.contain,
           ),
         ),
       ),
