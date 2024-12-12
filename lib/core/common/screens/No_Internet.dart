@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mo_7_store/core/styles/imageAssets.dart';
+import 'package:mo_7_store/core/styles/images/imageAssets.dart';
 
 class NoInternet extends StatelessWidget {
   const NoInternet({super.key});

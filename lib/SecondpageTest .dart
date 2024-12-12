@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:mo_7_store/core/extensions/routes_context.dart';
-import 'package:mo_7_store/core/routes/AppRoutes.dart';
+import 'package:mo_7_store/core/extensions/context_ext.dart';
 
-class FirstTest extends StatelessWidget {
-  const FirstTest({super.key});
+class SecondTest extends StatelessWidget {
+  const SecondTest({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "First",
+          "Second",
         ),
         centerTitle: true,
       ),
@@ -18,7 +17,7 @@ class FirstTest extends StatelessWidget {
         constraints: const BoxConstraints.expand(),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          color: Colors.blueGrey,
+          color: Colors.redAccent,
         ),
         child: Center(
           child: ElevatedButton(
@@ -26,10 +25,10 @@ class FirstTest extends StatelessWidget {
                 backgroundColor: WidgetStatePropertyAll(Colors.blue),
               ),
               onPressed: () {
-                context.pushNamed(AppRoutes.secondPage);
+                context.pushNamed('routeName');
               },
               child: const Text(
-                "Go To Second",
+                "Go To first",
                 style: TextStyle(
                   color: Colors.white,
                 ),

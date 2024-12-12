@@ -1,8 +1,8 @@
 // ignore_for_file: unused_local_variable
 
 import 'package:flutter/material.dart';
-import 'package:mo_7_store/core/common/screens/SecondpageTest%20.dart';
-import 'package:mo_7_store/core/common/screens/firstpageTest.dart';
+import 'package:mo_7_store/SecondpageTest%20.dart';
+import 'package:mo_7_store/firstpageTest.dart';
 import 'package:mo_7_store/core/common/screens/under_build_screen.dart';
 import 'package:mo_7_store/core/routes/base_routes.dart';
 
