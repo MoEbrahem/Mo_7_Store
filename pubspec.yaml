@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  animate_do: ^3.3.4
   cloud_firestore: ^5.5.0
   connectivity_plus: ^6.1.0
   cupertino_icons: ^1.0.8
@@ -36,7 +37,6 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_dotenv: ^5.2.1
-  # flutter_localization: ^0.2.3
   flutter_localizations:
     sdk: flutter
   flutter_native_splash: ^2.4.3
@@ -45,6 +45,8 @@ dependencies:
 dev_dependencies:
   flutter_launcher_icons: ^0.14.1
   flutter_lints: ^4.0.0
+  flutter_test:
+    sdk: flutter
   very_good_analysis: ^6.0.0
 
 #### Icon App ####
@@ -58,13 +60,8 @@ flutter_launcher_icons:
   flutter_test:
     sdk: flutter
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-# The following section is specific to Flutter packages.
 flutter:
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
+
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
@@ -74,6 +71,9 @@ flutter:
     - assets/images/icons/
     - lang/ar.json
     - lang/en.json
+    - assets/images/admin/
+    - assets/images/customer/
+    - assets/svg/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
   # For details regarding adding assets from package dependencies, see
