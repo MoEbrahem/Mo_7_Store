@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mo_7_store/core/extensions/context_ext.dart';
-import 'package:mo_7_store/core/styles/images/imageAssets.dart';
+import 'package:mo_7_store/core/styles/images/app_images.dart';
 
 class PageUnderBuildScreen extends StatelessWidget {
   const PageUnderBuildScreen({super.key});
@@ -25,7 +25,7 @@ class PageUnderBuildScreen extends StatelessWidget {
         constraints: const BoxConstraints.expand(),
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(ImageAssets.pageUnderBuildScreen),
+            image: AssetImage(ImageAssets.pageUnderBuild),
             fit: BoxFit.contain,
           ),
         ),

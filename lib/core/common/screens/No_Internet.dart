@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mo_7_store/core/styles/images/imageAssets.dart';
+import 'package:mo_7_store/core/styles/images/app_images.dart';
 
 class NoInternet extends StatelessWidget {
   const NoInternet({super.key});
@@ -13,7 +13,7 @@ class NoInternet extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
-              ImageAssets.noInternet,
+              ImageAssets.noNetwork,
             ),
             fit: BoxFit.fill
             ),

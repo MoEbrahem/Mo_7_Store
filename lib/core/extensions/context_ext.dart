@@ -9,7 +9,10 @@ extension ContextExtensions on BuildContext{
   MyColors get color => Theme.of(this).extension<MyColors>()!;
   
   //  Image
-  ImageExtension get image => Theme.of(this).extension<ImageExtension>()!;
+  MyAssets get image => Theme.of(this).extension<MyAssets>()!;  
+  
+  //  TextStyle
+  TextStyle get textStyle => Theme.of(this).textTheme.displaySmall!;
 
   //  Languages
   String translate(String langKey){
