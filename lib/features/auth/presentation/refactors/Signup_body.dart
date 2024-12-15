@@ -8,11 +8,12 @@ import 'package:mo_7_store/core/routes/AppRoutes.dart';
 import 'package:mo_7_store/core/styles/fonts/fontWeight.dart';
 import 'package:mo_7_store/features/auth/presentation/widgets/DarkAndLangButtons.dart';
 import 'package:mo_7_store/features/auth/presentation/widgets/auth_title_info.dart';
-import 'package:mo_7_store/features/auth/presentation/widgets/login/button_text.dart';
-import 'package:mo_7_store/features/auth/presentation/widgets/login/text_form.dart';
+import 'package:mo_7_store/features/auth/presentation/widgets/sign_up/sign_up_button.dart';
+import 'package:mo_7_store/features/auth/presentation/widgets/sign_up/text_form_signUp.dart';
+import 'package:mo_7_store/features/auth/presentation/widgets/sign_up/user_Image.dart';
 
-class LoginBody extends StatelessWidget {
-  const LoginBody({super.key});
+class SignupBody extends StatelessWidget {
+  const SignupBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,35 +25,39 @@ class LoginBody extends StatelessWidget {
             // Language and Theme Mode
             const DarkAndLangButtons(),
             SizedBox(
-              height: 50.h,
+              height: 30.h,
             ),
             // Title and Description
             AuthTitleInfo(
-              title: context.translate(LangKeys.login),
-              description: context.translate(LangKeys.welcome),
+              title: context.translate(LangKeys.signUp),
+              description: context.translate(LangKeys.signUpWelcome),
             ),
             SizedBox(
-              height: 30.h,
+              height: 10.h,
             ),
-            // Login Text Form Fields
-            const LoginTextForm(),
+            const UserProfileImage(),
             SizedBox(
-              height: 30.h,
+              height: 20.h,
             ),
-            LoginButton(
+            // Signup Text Form Fields
+            const SignUpTextForm(),
+            SizedBox(
+              height: 20.h,
+            ),
+            SignUpButton(
               onPressed: () {},
             ),
             SizedBox(
-              height: 30.h,
+              height: 20.h,
             ),
             CustomFadeInDown(
               duration: 400,
               child: InkWell(
-                onTap: (){
-                  context.pushReplacementNamed(AppRoutes.signup);
+                onTap: () {
+                  context.pushReplacementNamed(AppRoutes.login);
                 },
                 child: TextApp(
-                  text: context.translate(LangKeys.createAccount),
+                  text: context.translate(LangKeys.youHaveAccount),
                   theme: context.textStyle.copyWith(
                     fontSize: 16.sp,
                     fontWeight: FontHelperWeight.fontBold,
