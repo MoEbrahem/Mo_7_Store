@@ -42,7 +42,7 @@ class Mo7Store extends StatelessWidget {
               },
               theme: darkTheme(),
               onGenerateRoute: AppRoutes.onGenerateRoute,  
-              initialRoute: AppRoutes.firstPage,  
+              initialRoute: AppRoutes.login,  
               // home: ,
             ),
           );
