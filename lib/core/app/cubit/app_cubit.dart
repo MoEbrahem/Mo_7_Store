@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:mo_7_store/core/services/pref_Keys.dart';
-import 'package:mo_7_store/core/services/shared_pref.dart';
+import 'package:mo_7_store/core/services/shared_Pref/pref_Keys.dart';
+import 'package:mo_7_store/core/services/shared_Pref/shared_pref.dart';
 
 part 'app_state.dart';
 part 'app_cubit.freezed.dart';
