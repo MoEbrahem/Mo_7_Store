@@ -24,7 +24,7 @@ class LoginBody extends StatelessWidget {
             // Language and Theme Mode
             const DarkAndLangButtons(),
             SizedBox(
-              height: 50.h,
+              height: 70.h,
             ),
             // Title and Description
             AuthTitleInfo(
@@ -32,18 +32,18 @@ class LoginBody extends StatelessWidget {
               description: context.translate(LangKeys.welcome),
             ),
             SizedBox(
-              height: 30.h,
+              height: 40.h,
             ),
             // Login Text Form Fields
             const LoginTextForm(),
             SizedBox(
-              height: 30.h,
+              height: 40.h,
             ),
             LoginButton(
               onPressed: () {},
             ),
             SizedBox(
-              height: 30.h,
+              height: 50.h,
             ),
             CustomFadeInDown(
               duration: 400,

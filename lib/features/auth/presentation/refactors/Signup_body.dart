@@ -18,7 +18,7 @@ class SignupBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+      padding: EdgeInsets.only(right: 20.w,left: 20.w, top: 20.h),
       child: SingleChildScrollView(
         child: Column(
           children: [
