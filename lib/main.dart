@@ -2,11 +2,15 @@ import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:mo_7_store/core/app/di/getit.dart';
 import 'package:mo_7_store/core/app/env.variables.dart';
+import 'package:mo_7_store/core/services/shared_pref.dart';
 import 'package:mo_7_store/mo_7_store_appstore.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  await SharedPref().instantiatePreferences();
+  await setUpInjection();
   await EnvVariable.instance.init(envType: EnvTypeEnum.dev);
 
   Platform.isAndroid ? 

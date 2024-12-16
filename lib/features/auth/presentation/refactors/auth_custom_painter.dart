@@ -18,7 +18,7 @@ class AuthCustomPainter extends CustomPainter {
 
   void _pathChoeses(Path path, Size size) {
     path
-      ..moveTo(size.width * -0.0345067, size.height * 0.6583005)
+      ..moveTo(size.width * -0.0345067, size.height * 0.3583005)
       ..lineTo(size.width * 1.0372800, size.height * 1.0012192)
       ..lineTo(size.width * 1.0394667, size.height * 1.0054064)
       ..lineTo(size.width * -0.0378133, size.height * 0.9998645);
