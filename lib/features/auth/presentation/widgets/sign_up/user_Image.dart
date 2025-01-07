@@ -1,14 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:mo_7_store/core/common/animation/animate_do.dart';
+import 'package:mo_7_store/core/services/shared_Pref/pref_Keys.dart';
+import 'package:mo_7_store/core/services/shared_Pref/shared_pref.dart';
+import 'package:mo_7_store/core/utils/image_pick.dart';
 
-class UserProfileImage extends StatelessWidget {
+class UserProfileImage extends StatefulWidget {
   const UserProfileImage({super.key});
 
   @override
+  State<UserProfileImage> createState() => _UserProfileImageState();
+}
+
+class _UserProfileImageState extends State<UserProfileImage> {
+  @override
   Widget build(BuildContext context) {
-    return const CircleAvatar(
-      radius: 38,
-      backgroundImage: NetworkImage(
-        'https://images.unsplash.com/photo-1731484636405-35018e2a8a86?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    String? image = SharedPref().getString(PrefKeys.profileImage);
+    return GestureDetector(
+      onTap: () {
+        PickImageUtil().pickImage();
+        setState(() {});
+      },
+      child: CustomFadeInDown(
+        duration: 500,
+        child: CircleAvatar(
+          radius: 38,
+          backgroundImage: image !=null ?
+          NetworkImage(image)
+          : const AssetImage(
+            "assets/images/customer/user.png"
+          ),
+        ),
       ),
     );
   }

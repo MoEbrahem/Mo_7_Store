@@ -39,16 +39,14 @@ class LoginBody extends StatelessWidget {
             SizedBox(
               height: 40.h,
             ),
-            LoginButton(
-              onPressed: () {},
-            ),
+            const LoginButton(),
             SizedBox(
               height: 50.h,
             ),
             CustomFadeInDown(
               duration: 400,
               child: InkWell(
-                onTap: (){
+                onTap: () {
                   context.pushReplacementNamed(AppRoutes.signup);
                 },
                 child: TextApp(
