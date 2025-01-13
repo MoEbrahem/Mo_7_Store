@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mo_7_store/core/app/di/getit.dart';
+import 'package:mo_7_store/core/app/upload_image/cubit/upload_image_cubit.dart';
 import 'package:mo_7_store/core/common/screens/under_build_screen.dart';
 import 'package:mo_7_store/core/routes/base_routes.dart';
 import 'package:mo_7_store/features/admin/home_admin.dart';
@@ -28,7 +29,11 @@ class AppRoutes {
           ),
         );
       case signup:
-        return BaseRoute(page: const SignUpScreen());
+        return BaseRoute(page: MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (context)=>getit<UploadImageCubit>()),
+          ],
+          child: const SignUpScreen()));
       case customerHome:
         return BaseRoute(page: const HomeCustomer());
       case adminHome:

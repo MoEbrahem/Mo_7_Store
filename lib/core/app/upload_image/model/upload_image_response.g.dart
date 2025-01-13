@@ -8,11 +8,11 @@ part of 'upload_image_response.dart';
 
 UploadImageResponse _$UploadImageResponseFromJson(Map<String, dynamic> json) =>
     UploadImageResponse(
-      file: json['file'] as String?,
+      location: json['location'] as String?,
     );
 
 Map<String, dynamic> _$UploadImageResponseToJson(
         UploadImageResponse instance) =>
     <String, dynamic>{
-      'file': instance.file,
+      'location': instance.location,
     };

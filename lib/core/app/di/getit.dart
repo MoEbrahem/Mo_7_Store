@@ -2,6 +2,9 @@
 import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mo_7_store/core/app/cubit/app_cubit.dart';
+import 'package:mo_7_store/core/app/upload_image/cubit/upload_image_cubit.dart';
+import 'package:mo_7_store/core/app/upload_image/data_source/UploadImageDataSource.dart';
+import 'package:mo_7_store/core/app/upload_image/repo/uploadImageRepo.dart';
 import 'package:mo_7_store/core/services/graphql/api_service.dart';
 import 'package:mo_7_store/core/services/graphql/dio_factory.dart';
 import 'package:mo_7_store/features/auth/data/data_Source/auth_data_source.dart';
@@ -22,6 +25,9 @@ Future<void> _initCore()async{
   getit.registerFactory(AppCubit.new);
   getit.registerLazySingleton<ApiService>(()=>ApiService(dio));
   getit.registerSingleton<GlobalKey<NavigatorState>>(navigatorKey);
+  getit.registerFactory(()=>UploadImageCubit(getit()));
+  getit.registerLazySingleton(()=>UploadImageRepo(getit()));
+  getit.registerLazySingleton(()=>UploadImageDataSource(getit()));
   
 }
 
