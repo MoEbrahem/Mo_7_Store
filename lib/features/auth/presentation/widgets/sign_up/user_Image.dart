@@ -13,7 +13,6 @@ class UserProfileImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String? imageUploaded = context.read<UploadImageCubit>().getImageUrl;
     return CustomFadeInDown(
         duration: 500,
         child: BlocConsumer<UploadImageCubit, UploadImageState>(
@@ -33,6 +32,8 @@ class UserProfileImage extends StatelessWidget {
               );
           },
           builder: (context, state) {
+          String? imageUploaded = context.read<UploadImageCubit>().getImageUrl;
+
             return state.maybeWhen(
               loading: () {
               return CircleAvatar(
