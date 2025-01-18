@@ -3,6 +3,8 @@ import 'package:mo_7_store/core/utils/app_strings.dart';
 import 'package:mo_7_store/features/auth/data/data_Source/auth_data_source.dart';
 import 'package:mo_7_store/features/auth/data/model/login_request.dart';
 import 'package:mo_7_store/features/auth/data/model/login_response.dart';
+import 'package:mo_7_store/features/auth/data/model/sign_Up_request_body.dart';
+import 'package:mo_7_store/features/auth/data/model/sign_up_response.dart';
 import 'package:mo_7_store/features/auth/data/model/user_role_response.dart';
 
 class AuthRepo {
@@ -21,5 +23,15 @@ class AuthRepo {
   Future<UserRoleResponse> userRole(String token)async{
     final res = await _dataSource.userRole(token);
     return res;
+  }
+
+  Future<ApiResult<SignUpResponse>> signup(SignUpRequestBody body)async{
+    try {
+      final res = await _dataSource.signup(body: body);
+      return ApiResult.success(res);
+    } catch (e) {
+      return const ApiResult.failure("Please, try again we have error.");
+      
+    }
   }
 }

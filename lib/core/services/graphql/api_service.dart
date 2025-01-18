@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:mo_7_store/core/app/upload_image/model/upload_image_response.dart';
 import 'package:mo_7_store/features/auth/data/model/login_response.dart';
+import 'package:mo_7_store/features/auth/data/model/sign_up_response.dart';
 import 'package:mo_7_store/features/auth/data/model/user_role_response.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -23,4 +24,6 @@ abstract class ApiService {
   Future<UploadImageResponse> uploadFile(
     @Body() FormData file,
   );
+    @POST(graphql)
+  Future<SignUpResponse> signup(@Body() Map<String,dynamic> mutation,); 
 }

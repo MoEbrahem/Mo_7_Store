@@ -4,6 +4,8 @@ import 'package:mo_7_store/core/services/graphql/api_service.dart';
 import 'package:mo_7_store/core/services/graphql/graphql_queries/auth/auth_queries.dart';
 import 'package:mo_7_store/features/auth/data/model/login_request.dart';
 import 'package:mo_7_store/features/auth/data/model/login_response.dart';
+import 'package:mo_7_store/features/auth/data/model/sign_Up_request_body.dart';
+import 'package:mo_7_store/features/auth/data/model/sign_up_response.dart';
 import 'package:mo_7_store/features/auth/data/model/user_role_response.dart';
 
 class AuthDataSource {
@@ -23,6 +25,13 @@ class AuthDataSource {
     final client = ApiService(dio);
     final response = await client.userRole();
     debugPrint("User Role => ${response.userRole}");
+    return response;
+  }
+
+    Future<SignUpResponse> signup({required SignUpRequestBody body}) async {
+    final response = await _graphql.signup(
+      AuthQueries().signUpMapQuery(body: body),
+    );
     return response;
   }
 
