@@ -1,13 +1,17 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPref {
+  // factory constructor return same instatce in every time call it
   factory SharedPref() {
-    return preferences;
+    return _preferences;
   }
-
+  // private constructor
   SharedPref._internal();
-  static final SharedPref preferences = SharedPref._internal();
 
+  // private instance
+  static final SharedPref _preferences = SharedPref._internal();
+
+  // private variable
   static late SharedPreferences sharedPreferences;
 
   ///Below method is to initialize the SharedPreference instance.

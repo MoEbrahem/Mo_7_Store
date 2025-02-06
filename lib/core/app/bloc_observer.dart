@@ -1,6 +1,5 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-// dart run build_runner build --delete-conflicting-outputs
 
 class AppBlocObserver extends BlocObserver {
   @override

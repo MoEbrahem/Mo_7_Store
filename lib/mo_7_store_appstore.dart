@@ -25,18 +25,22 @@ class Mo7Store extends StatelessWidget {
             create: (context) => getit<AppCubit>()
               ..changeThemeMode(
                 sharedMode: SharedPref().getBoolean(PrefKeys.themeMode),
-              )..getAppLanguage(),
+              )
+              ..getAppLanguage(),
             child: ScreenUtilInit(
               designSize: const Size(360, 732),
               minTextAdapt: true,
               child: BlocBuilder<AppCubit, AppState>(
                 buildWhen: (previous, current) {
-                  return previous != current ;
+                  return previous != current;
                 },
                 builder: (context, state) {
                   final cubit = context.read<AppCubit>();
                   return MaterialApp(
-                    debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
+                    debugShowCheckedModeBanner: false,
+                    // EnvVariable.instance.debugMode,
+                    
+                    navigatorKey: getit<GlobalKey<NavigatorState>>(),
                     title: 'Mo_7_Store',
                     locale: Locale(cubit.currentLanguageCode),
                     localizationsDelegates:
@@ -61,7 +65,13 @@ class Mo7Store extends StatelessWidget {
                     },
                     theme: cubit.isDark ? lightTheme() : darkTheme(),
                     onGenerateRoute: AppRoutes.onGenerateRoute,
-                    initialRoute: AppRoutes.login,
+                    initialRoute: SharedPref()
+                                .getString(PrefKeys.accessToken) !=
+                            null
+                        ? SharedPref().getString(PrefKeys.userRole) == 'admin'
+                            ? AppRoutes.adminHome
+                            : AppRoutes.customerHome
+                        : AppRoutes.login,
                   );
                 },
               ),
