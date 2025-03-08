@@ -13,7 +13,7 @@ import 'package:mo_7_store/core/styles/fonts/fontWeight.dart';
 import 'package:mo_7_store/features/admin/Add_Categories/Presentation/screens/add_categories_screen.dart';
 import 'package:mo_7_store/features/admin/Add_Notifications/Presentation/screens/add_notifications_screen.dart';
 import 'package:mo_7_store/features/admin/Add_Products/Presentation/screens/add_Products_screen.dart';
-import 'package:mo_7_store/features/admin/Users/Presentation/screens/user_screen.dart';
+import 'package:mo_7_store/features/admin/dashboard/Presentation/bloc/Users/Presentation/screens/user_screen.dart';
 import 'package:mo_7_store/features/admin/dashboard/Presentation/screens/dashboard_screen.dart';
 
 List<DrawerItemModel> adminDrawerList(BuildContext context) {

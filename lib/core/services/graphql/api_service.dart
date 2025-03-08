@@ -1,5 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:mo_7_store/core/app/upload_image/model/upload_image_response.dart';
+import 'package:mo_7_store/features/admin/dashboard/data/models/categories_number_response.dart';
+import 'package:mo_7_store/features/admin/dashboard/data/models/products_number_response.dart';
+import 'package:mo_7_store/features/admin/dashboard/data/models/user_number_response.dart';
 import 'package:mo_7_store/features/auth/data/model/login_response.dart';
 import 'package:mo_7_store/features/auth/data/model/sign_up_response.dart';
 import 'package:mo_7_store/features/auth/data/model/user_role_response.dart';
@@ -15,7 +18,9 @@ abstract class ApiService {
   factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
 
   @POST(graphql)
-  Future<LoginResponse> login(@Body() Map<String,dynamic> mutation,); 
+  Future<LoginResponse> login(
+    @Body() Map<String, dynamic> mutation,
+  );
 
   @GET('/api/v1/auth/profile')
   Future<UserRoleResponse> userRole();
@@ -24,6 +29,20 @@ abstract class ApiService {
   Future<UploadImageResponse> uploadFile(
     @Body() FormData file,
   );
+  @POST(graphql)
+  Future<SignUpResponse> signup(
+    @Body() Map<String, dynamic> mutation,
+  );
     @POST(graphql)
-  Future<SignUpResponse> signup(@Body() Map<String,dynamic> mutation,); 
+  Future<ProductsNumberResponse> numberOfProducts(
+    @Body() Map<String, dynamic> query,
+  );
+    @POST(graphql)
+  Future<CategoriesNumberResponse> numberOfCategories(
+    @Body() Map<String, dynamic> query,
+  );
+      @POST(graphql)
+  Future<UsersNumberResponse> numberOfUsers(
+    @Body() Map<String, dynamic> query,
+  );
 }
